@@ -44,9 +44,9 @@ function M.setup(opts)
 
   none_ls.register(jet_julia)
 
-  if setup_lspconfig then
-    require("lspconfig")["null-ls"].setup({})
-  end
+  --if setup_lspconfig then
+   -- require("lspconfig")["null-ls"].setup({})
+  --end
 end
 
 return M
