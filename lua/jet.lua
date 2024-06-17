@@ -8,8 +8,8 @@ function M.setup(opts)
   opts = opts or {}
   timeout = opts.timeout or 20000
   setup_lspconfig = opts.setup_lspconfig or true
-  local none_ls = require("none-ls")
-  local helpers = require("none-ls.helpers")
+  local none_ls = require("null-ls")
+  local helpers = require("null-ls.helpers")
   local builtins = none_ls.builtins
   local generator = none_ls.generator
 
