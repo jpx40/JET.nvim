@@ -8,15 +8,15 @@ function M.setup(opts)
   opts = opts or {}
   timeout = opts.timeout or 20000
   setup_lspconfig = opts.setup_lspconfig or true
-  local null_ls = require("null-ls")
-  local helpers = require("null-ls.helpers")
-  local builtins = null_ls.builtins
-  local generator = null_ls.generator
+  local none_ls = require("none-ls")
+  local helpers = require("none-ls.helpers")
+  local builtins = none_ls.builtins
+  local generator = none_ls.generator
 
   local jet_julia = {
-    method = null_ls.methods.DIAGNOSTICS,
+    method = none_ls.methods.DIAGNOSTICS,
     filetypes = { "julia" },
-    generator = null_ls.generator({
+    generator = none_ls.generator({
       command = command,
       to_stdin = true,
       from_stderr = true,
@@ -42,7 +42,7 @@ function M.setup(opts)
     }),
   }
 
-  null_ls.register(jet_julia)
+  none_ls.register(jet_julia)
 
   if setup_lspconfig then
     require("lspconfig")["null-ls"].setup({})
